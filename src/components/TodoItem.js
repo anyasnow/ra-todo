@@ -11,7 +11,7 @@ function TodoItem(props) {
 
   return (
     <li style={css}>
-      <button>Completed</button>
+      <button onClick={props.handleComplete}>Completed</button>
       <button>Delete</button>
       <h1>{props.task}</h1>
     </li>

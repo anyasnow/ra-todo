@@ -8,22 +8,37 @@ class App extends React.Component {
     todos: [
       {
         task: 'learn js', 
-        isdone: true
+        isdone: true,
+        id: 1
       },
       {
         task: 'clean room',
-        isdone: false},
+        isdone: false,
+        id: 2
+      },
       {
         task: 'cook steak',
-        isdone: true
+        isdone: true,
+        id: 3
       },
     ]
+  }
+
+  handleCompleteButton() {
+
+    this.setState(){
+      isdone: true
+    }
+  }
+
+  handleDeleteButton() {
+    console.log('clickedDelete')
   }
 
   render() {
     return (
       <div className="App">
-        <ListTodo todos={this.state.todos}/>
+        <ListTodo todos={this.state.todos} handleComplete={this.handleCompleteButton}/>
       </div>
     );
   }
