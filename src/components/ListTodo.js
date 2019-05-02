@@ -9,7 +9,11 @@ function ListTodo(props) {
     }
 
     let todoArray = props.todos.map((object) => {
-      return <TodoItem task={object.task} isDone={object.isDone} handleComplete={props.handleComplete} id={object.id}/>
+      return <TodoItem task={object.task} 
+                       isDone={object.isDone} 
+                       handleComplete={props.handleComplete} 
+                       handleDelete={props.handleDelete}
+                       id={object.id}/>
     });
 
     return (

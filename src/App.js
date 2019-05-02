@@ -8,37 +8,66 @@ class App extends React.Component {
     todos: [
       {
         task: 'learn js', 
-        isdone: true,
+        isDone: false,
         id: 1
       },
       {
         task: 'clean room',
-        isdone: false,
+        isDone: false,
         id: 2
       },
       {
         task: 'cook steak',
-        isdone: true,
+        isDone: false,
         id: 3
       },
-    ]
+    ],
+    coolProp: 'a;lsdkfjha;slkj'
   }
 
-  handleCompleteButton() {
 
-    this.setState(){
-      isdone: true
-    }
+  handleComplete = (id) => {
+    //grab particular object from state
+      let todos = this.state.todos;
+      let filteredTodos = todos.map((object) => {
+        if(object.id === id) {
+          //update isDone to true
+          object.isDone = !object.isDone;
+        }
+        return object;
+      });
+      
+      this.setState({
+        todos: filteredTodos
+      });
+      
   }
 
-  handleDeleteButton() {
-    console.log('clickedDelete')
+  handleDelete = (id) => {
+    //identify particular object
+    let todos = this.state.todos;
+    let filteredTodos = todos.filter((object) => {
+      if(object.id === id) {
+        return false
+      }
+      return true
+    });
+
+    this.setState({
+      todos: filteredTodos
+    });
+
+
+    //return all items except select element
+
   }
 
   render() {
     return (
       <div className="App">
-        <ListTodo todos={this.state.todos} handleComplete={this.handleCompleteButton}/>
+        <ListTodo todos={this.state.todos} 
+                  handleComplete={this.handleComplete}
+                  handleDelete={this.handleDelete}/>
       </div>
     );
   }
