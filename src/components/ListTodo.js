@@ -13,7 +13,8 @@ function ListTodo(props) {
                        isDone={object.isDone} 
                        handleComplete={props.handleComplete} 
                        handleDelete={props.handleDelete}
-                       id={object.id}/>
+                       id={object.id}
+                       key={object.id}/>
     });
 
     return (

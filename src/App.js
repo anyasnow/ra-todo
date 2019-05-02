@@ -3,8 +3,10 @@ import './App.css';
 import CreateTodo from './components/CreateTodo';
 import ListTodo from './components/ListTodo';
 
+
 class App extends React.Component {
   state = {
+    idCount: 4,
     todos: [
       {
         task: 'learn js', 
@@ -22,9 +24,28 @@ class App extends React.Component {
         id: 3
       },
     ],
-    coolProp: 'a;lsdkfjha;slkj'
+    
   }
 
+  handleSubmit = (e, userInput) => {
+    //grab user input
+    //update state with input
+    e.preventDefault();
+    let newTodos = this.state.todos;
+    let newTodo = {
+      task: userInput,
+      isDone: false,
+      id: this.state.idCount
+    }
+    newTodos.push(newTodo)
+
+    this.setState({
+      todos: newTodos,
+      idCount: this.state.idCount+1
+    });
+    e.target.reset();
+    
+  }
 
   handleComplete = (id) => {
     //grab particular object from state
@@ -64,11 +85,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <>
+        <CreateTodo handleSubmit={this.handleSubmit}/>
         <ListTodo todos={this.state.todos} 
                   handleComplete={this.handleComplete}
                   handleDelete={this.handleDelete}/>
-      </div>
+                
+
+      </>
     );
   }
   
