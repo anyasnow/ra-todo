@@ -21,16 +21,15 @@ li {
     /* background-color: grey; */
     margin: 2px;
     padding: 5px;
-    border: 1px solid teal;
+    border: 1px solid grey;
     display: inline-block;
+    width: 600px
 }
 
 p {
-margin: 2px;
-padding-bottom: 20px;
-font-size: 20px;
- color: black;
- display: inline-block;
+    color: teal;
+    font-size: 20px;
+    display: inline-block;
 }
 
 /* button {
@@ -42,39 +41,45 @@ font-size: 20px;
 } */
 
 .completed {
-    text-decoration: line-through;
-    margin: 2px;
-    font-size: 20px;
     color: grey;
+    font-size: 20px;
     display: inline-block;
 }
 
- 
+
+
 .important {
-   background-color: orange; 
+   color: orange; 
 }
+
+
 
 .App {
     font-family: sans-serif;
     text-align: center;
 }
 
-.fa-check-square {
+.fa-calendar-check {
     font-size: 25px; 
-    color: teal;
-    padding: 2px;
     padding-right: 25px
 }
 
 .fa-star {
+    padding-top: 20px;
+    padding-right: 30px;
     font-size: 25px; 
-    color: orange;
-    padding: 2px;
-    padding-left: 100px
+    float: right;
+    
 }
 
 .fa-trash-alt {
+    padding-top: 20px;
     font-size: 25px; 
     color: tomato;
-    margin: 20px 0px 0px 20px;
+    float: right;
+    
 }
+
+
+
+
