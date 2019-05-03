@@ -1,29 +1,17 @@
 import React from 'react';
+import styles from './styles.css'
 
 function TodoItem(props) {
 
-  let bgColor;
-
-
-  if(props.isDone) {
-    bgColor = "#ED7D3A"
-  } else {
-    bgColor = "#363537"
-  }
-
-
-  let css = {
-    color: "teal",
-    backgroundColor: bgColor,
-    padding: "10px"
-  }
-
+  let completeness = props.completed ? "completed" : "";
+  let importance = props.important ? "important" : "";
 
   return (
-    <li style={css}>
+    <li>
+      <p className={completeness + ' ' + importance}>{props.task}</p>
+      <button onClick={() => props.handleImportant(props.id)}>Important</button>
       <button onClick={() => props.handleComplete(props.id)}>Completed</button>
       <button onClick={() => props.handleDelete(props.id)}>Delete</button>
-      <h1>{props.task}</h1>
     </li>
   )
 }

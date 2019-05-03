@@ -7,6 +7,11 @@ state = {
 
 handleChange = (e) => {
     //update state
+    if (this.state.userInput === "h"){
+        this.setState({
+            userInput: "what"
+        })
+    }
     this.setState({
         userInput: e.target.value
     }) 

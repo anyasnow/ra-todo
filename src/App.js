@@ -1,47 +1,30 @@
 import React from 'react';
-import './App.css';
 import CreateTodo from './components/CreateTodo';
 import ListTodo from './components/ListTodo';
+import  './components/styles.css';
+import cuid from '../node_modules/cuid'
 
 
 class App extends React.Component {
   state = {
-    idCount: 4,
-    todos: [
-      {
-        task: 'learn js', 
-        isDone: false,
-        id: 1
-      },
-      {
-        task: 'clean room',
-        isDone: false,
-        id: 2
-      },
-      {
-        task: 'cook steak',
-        isDone: false,
-        id: 3
-      },
-    ],
-    
+    todos: []
   }
 
   handleSubmit = (e, userInput) => {
     //grab user input
     //update state with input
     e.preventDefault();
-    let newTodos = this.state.todos;
-    let newTodo = {
+    let newTaskList = this.state.todos;
+    let newTask = {
       task: userInput,
-      isDone: false,
-      id: this.state.idCount
+      completed: false,
+      important: false,
+      id: cuid()
     }
-    newTodos.push(newTodo)
+    newTaskList.push(newTask)
 
     this.setState({
-      todos: newTodos,
-      idCount: this.state.idCount+1
+      todos: newTaskList
     });
     e.target.reset();
     
@@ -52,8 +35,8 @@ class App extends React.Component {
       let todos = this.state.todos;
       let filteredTodos = todos.map((object) => {
         if(object.id === id) {
-          //update isDone to true
-          object.isDone = !object.isDone;
+          //toggle completed boolean
+          object.completed = !object.completed;
         }
         return object;
       });
@@ -64,6 +47,18 @@ class App extends React.Component {
       
   }
 
+  handleImportant = id => {
+   this.setState({
+     todos: this.state.todos.map(element => {
+       if(element.id === id) {
+         element.important = !element.important
+       }
+       return element
+     })
+   })
+  }
+
+  
   handleDelete = (id) => {
     //identify particular object
     let todos = this.state.todos;
@@ -89,7 +84,8 @@ class App extends React.Component {
         <CreateTodo handleSubmit={this.handleSubmit}/>
         <ListTodo todos={this.state.todos} 
                   handleComplete={this.handleComplete}
-                  handleDelete={this.handleDelete}/>
+                  handleDelete={this.handleDelete}
+                  handleImportant={this.handleImportant}/>
                 
 
       </>

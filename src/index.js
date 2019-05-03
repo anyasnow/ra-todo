@@ -10,3 +10,11 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+//add highlight button
+//clear out latent form in 'state'
+//move css to styles folder
+//ternary operators?
+//change deleted styles
+//get rid of hardcoded w/out blank one

@@ -3,16 +3,15 @@ import TodoItem from './TodoItem';
 
 function ListTodo(props) {
 
-    let css = {
-      listStyle: "none",
-      paddingLeft: "0"
-    }
+    
 
     let todoArray = props.todos.map((object) => {
       return <TodoItem task={object.task} 
-                       isDone={object.isDone} 
+                       completed={object.completed}
+                       important={object.important} 
                        handleComplete={props.handleComplete} 
                        handleDelete={props.handleDelete}
+                       handleImportant={props.handleImportant}
                        id={object.id}
                        key={object.id}/>
     });
@@ -20,7 +19,7 @@ function ListTodo(props) {
     return (
         <>
           <h1>My List:</h1>
-          <ul style={css}>
+          <ul>
             {todoArray}
           </ul>
         </>
