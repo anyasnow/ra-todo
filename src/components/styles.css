@@ -2,7 +2,7 @@ body {
     margin: 40px;
 }
 
-a:focus {
+i:focus {
   outline: 1;
 border-radius: 10px;
 border: 2px solid teal
@@ -21,11 +21,12 @@ li {
     /* background-color: grey; */
     margin: 2px;
     padding: 5px;
+    border: 1px solid teal;
 }
 
 p {
 margin: 2px;
-padding: 2px 10px 2px 10px;
+padding-bottom: 20px;
 font-size: 20px;
  color: black;
  display: inline-block;
@@ -61,12 +62,14 @@ font-size: 20px;
     font-size: 25px; 
     color: teal;
     padding: 2px;
+    padding-right: 25px
 }
 
 .fa-star {
     font-size: 25px; 
     color: orange;
     padding: 2px;
+    padding-left: 100px
 }
 
 .fa-trash-alt {
