@@ -20,12 +20,6 @@ class App extends React.Component {
   };
 
 
-  clearForm = () => {
-    document.getElementById("form").reset();
-    this.setState({
-      userInput: ""
-    })
-  }
 
   handleSubmit = (e) => {
     //grab user input
@@ -33,17 +27,17 @@ class App extends React.Component {
     
     e.preventDefault();
 
-    const newTask = e.target.newTaskFromUserInput.value;
+    const newTask = e.target.newTaskFromUserInput.value; //why access w "name" and not "value" ?
     
     this.setState({
       todos: [...this.state.todos, createTask(newTask)]
     });
 
-          
-    this.clearForm();
-      
+    e.target.reset();  
+  };     
     
-  }
+    
+
 
   handleComplete = (id) => {
     //grab particular object from state
