@@ -13,35 +13,50 @@ p {
 margin: 2px;
 padding: 2px 10px 2px 10px;
 font-size: 20px;
- color: teal;
+ color: black;
  display: inline-block;
 }
 
-button {
+/* button {
     margin: 5px;
     background-color: white;
     padding: 2px;
     vertical-align: center;
     display: inline-block
-}
+} */
 
- .completed {
+.completed {
     text-decoration: line-through;
     margin: 2px;
     font-size: 20px;
-    color: teal;
+    color: grey;
     display: inline-block;
-  }
+}
 
  
-  .important {
+.important {
    background-color: orange; 
-  }
+}
 
-  
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
 
-  .App {
-  font-family: sans-serif;
-  text-align: center;
+.fa-check-square {
+    font-size: 25px; 
+    color: teal;
+    padding: 2px;
+}
 
+.fa-star {
+    font-size: 25px; 
+    color: orange;
+    padding: 2px;
+}
+
+.fa-trash-alt {
+    font-size: 25px; 
+    color: tomato;
+    margin: 20px 0px 0px 20px;
 }

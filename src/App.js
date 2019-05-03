@@ -61,6 +61,7 @@ class App extends React.Component {
   
   handleDelete = (id) => {
     //identify particular object
+    //return all items except select element
     let todos = this.state.todos;
     let filteredTodos = todos.filter((object) => {
       if(object.id === id) {
@@ -68,13 +69,13 @@ class App extends React.Component {
       }
       return true
     });
-
+    
     this.setState({
       todos: filteredTodos
     });
 
 
-    //return all items except select element
+    
 
   }
 

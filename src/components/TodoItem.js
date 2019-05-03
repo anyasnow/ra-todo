@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css'
+import './styles.css'
 
 function TodoItem(props) {
 
@@ -8,10 +8,10 @@ function TodoItem(props) {
 
   return (
     <li>
+      <i className="far fa-check-square" onClick={() => props.handleComplete(props.id)} />
       <p className={completeness + ' ' + importance}>{props.task}</p>
-      <button onClick={() => props.handleImportant(props.id)}>Important</button>
-      <button onClick={() => props.handleComplete(props.id)}>Completed</button>
-      <button onClick={() => props.handleDelete(props.id)}>Delete</button>
+      <i className="fas fa-star" onClick={() => props.handleImportant(props.id)} />
+      <i className="far fa-trash-alt" onClick={() => props.handleDelete(props.id)} />
     </li>
   )
 }
