@@ -12,9 +12,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
 
 
-//add highlight button
+
 //clear out latent form in 'state'
-//move css to styles folder
-//ternary operators?
 //change deleted styles
-//get rid of hardcoded w/out blank one
+//SPREAD OPERATOR

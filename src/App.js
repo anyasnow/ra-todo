@@ -4,29 +4,44 @@ import ListTodo from './components/ListTodo';
 import  './components/styles.css';
 import cuid from '../node_modules/cuid'
 
+//why does this need to be outside the class?
+function createTask(task) {
+  return ({
+    task: task,
+    completed: false,
+    important: false,
+    id: cuid()
+  });
+}
 
 class App extends React.Component {
   state = {
     todos: []
+  };
+
+
+  clearForm = () => {
+    document.getElementById("form").reset();
+    this.setState({
+      userInput: ""
+    })
   }
 
-  handleSubmit = (e, userInput) => {
+  handleSubmit = (e) => {
     //grab user input
     //update state with input
+    
     e.preventDefault();
-    let newTaskList = this.state.todos;
-    let newTask = {
-      task: userInput,
-      completed: false,
-      important: false,
-      id: cuid()
-    }
-    newTaskList.push(newTask)
 
+    const newTask = e.target.newTaskFromUserInput.value;
+    
     this.setState({
-      todos: newTaskList
+      todos: [...this.state.todos, createTask(newTask)]
     });
-    e.target.reset();
+
+          
+    this.clearForm();
+      
     
   }
 
@@ -74,8 +89,7 @@ class App extends React.Component {
       todos: filteredTodos
     });
 
-
-    
+   
 
   }
 
