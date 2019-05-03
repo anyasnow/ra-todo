@@ -90,13 +90,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <CreateTodo handleSubmit={this.handleSubmit}/>
+        
         <ListTodo todos={this.state.todos} 
                   handleComplete={this.handleComplete}
                   handleDelete={this.handleDelete}
                   handleImportant={this.handleImportant}/>
-                
-
+        <CreateTodo handleSubmit={this.handleSubmit} />
+               
       </>
     );
   }

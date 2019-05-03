@@ -18,7 +18,7 @@ function ListTodo(props) {
 
     return (
         <>
-          <h1>My List:</h1>
+          <h2>My Todo List:</h2>
           <ul>
             {todoArray}
           </ul>

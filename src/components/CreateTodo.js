@@ -19,8 +19,7 @@ handleChange = (e) => {
         });
     }
 
-
-    
+ 
         
 
 render() {
@@ -28,7 +27,7 @@ render() {
     
     return (
         <form id="form" onSubmit={this.props.handleSubmit} >
-            <label htmlFor="userInput">Enter Task</label>
+            <label htmlFor="userInput"></label>
             <input name="newTaskFromUserInput" type="text" onChange={this.handleChange} required/>
             <input type="submit" value="Add Task" />
         </form>
